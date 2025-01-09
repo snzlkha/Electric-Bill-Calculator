@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.ElectricBillCalculator"
+    android:background="#EDE6D6"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <EditText
+            android:id="@+id/etUnitUsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Unit Used (kWh)"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etRebate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Rebate Percentage %"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#A86E53"
+            android:text="Calculate Bill"
+            app:iconTint="#0A86E5" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#A86E53"
+            android:text="Clear" />
+
+        <TextView
+            android:id="@+id/tvCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Final Cost (RM)"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            style='@style/GreenText'/>
+
+        <!-- Detailed calculation section -->
+        <TextView
+            android:id="@+id/tvDetailedCalculation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bill Detailed"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <!-- End of detailed calculation section -->
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="142dp"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="123dp"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="Block Rate(kWh)" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="Used (kWh)" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="Rate (RM)" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="Total (RM)" />
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090" />
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="200" />
+
+                <TextView
+                    android:id="@+id/tvUsed200"
+                    android:padding="3dip"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvRate200"
+                    android:padding="3dip"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvTotal200"
+                    android:padding="3dip"
+                    android:text="0" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="100" />
+
+                <TextView
+                    android:id="@+id/tvUsed100"
+                    android:padding="3dip"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvRate100"
+                    android:padding="3dip"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvTotal100"
+                    android:padding="3dip"
+                    android:text="0" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="300" />
+
+                <TextView
+                    android:id="@+id/tvUsed300"
+                    android:padding="3dip"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvRate300"
+                    android:padding="3dip"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvTotal300"
+                    android:padding="3dip"
+                    android:text="0" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="Total" />
+
+                <TextView
+                    android:id="@+id/tvTotalUsed"
+                    android:padding="3dip"
+                    android:text="0" />
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:padding="3dip"
+                    android:text="0" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/tvTotalRebate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rebate Amount: RM 0"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tvTotalCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Cost: RM 0"
+            android:layout_marginTop="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnAboutPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#A86E53"
+            android:text="About" />
+
+        <TextView
+            android:id="@+id/copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center_horizontal"
+            android:text="© 2023 Siti Nurzulaikha binti Tajuddin.\nAll rights reserved."
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray" />
+
+    </LinearLayout>
+</RelativeLayout>
